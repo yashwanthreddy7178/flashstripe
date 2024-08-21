@@ -33,24 +33,24 @@ export async function POST(req) {
     const topic = await req.text();
     const response = await model.generateContent(topic);
     
-    console.log("Raw response:", response.response.text());
+    // console.log("Raw response:", response.response.text());
 
     let parsedResponse;
     try {
       parsedResponse = JSON.parse(response.response.text());
     } catch (parseError) {
-      console.error("Failed to parse JSON response:", parseError);
+      // console.error("Failed to parse JSON response:", parseError);
       return NextResponse.json({ error: "Invalid JSON response from AI model" }, { status: 500 });
     }
 
     if (!parsedResponse.flashcards || !Array.isArray(parsedResponse.flashcards)) {
-      console.error("Unexpected response structure:", parsedResponse);
+      // console.error("Unexpected response structure:", parsedResponse);
       return NextResponse.json({ error: "Unexpected response structure from AI model" }, { status: 500 });
     }
 
     return NextResponse.json(parsedResponse.flashcards);
   } catch (error) {
-    console.error("Error generating flashcards:", error);
+    // console.error("Error generating flashcards:", error);
     return NextResponse.json({ error: "Failed to generate flashcards" }, { status: 500 });
   }
 }
