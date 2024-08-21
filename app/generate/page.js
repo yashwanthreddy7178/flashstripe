@@ -19,7 +19,7 @@ import {
   Toolbar,
   Typography
 } from "@mui/material";
-import { collection, doc, getDoc, updateDoc, writeBatch } from "firebase/firestore";
+import { collection, doc, getDoc, setDoc, updateDoc, writeBatch } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
