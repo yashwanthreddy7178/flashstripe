@@ -264,8 +264,9 @@ export default function Home() {
                   <Typography variant="h6" gutterBottom>
                     $5 / month
                   </Typography>
-                  <Typography>
-                    Access to basic flashcard features and limited storage.
+                  <Typography component="ul">
+                    <li>Access to basic flashcard features and limited storage.</li>
+                    <li>20 Generations per month.</li>
                   </Typography>
                 </CardContent>
                 <Button variant="contained" color="primary" sx={{ mt: 2 }} onClick={() => handleSubmit('basic')}>
@@ -300,8 +301,9 @@ export default function Home() {
                   <Typography variant="h6" gutterBottom>
                     $10 / month
                   </Typography>
-                  <Typography>
-                    Unlimited flashcards and storage, with priority support.
+                  <Typography component="ul">
+                    <li>Premium Features with unlimited storage and priority support.</li>
+                    <li>40 Generations per month.</li>
                   </Typography>
                 </CardContent>
                 <Button
